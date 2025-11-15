@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>خدماتك — موقع خدمات مجاني</title>
+  <meta name="description" content="موقع بسيط لعرض خدماتك، اتصل واحصل على عرض سعر" />
+  <style>
+    :root{--accent:#0b74de;--bg:#f7f9fc;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;line-height:1.5;margin:0;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,rgba(11,116,222,0.95),rgba(4,100,183,0.95));color:#fff;padding:28px 18px}
+    .container{max-width:1100px;margin:0 auto;padding:18px}
+    .nav{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;font-size:20px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;margin-left:12px}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:28px 0}
+    .hero h1{font-size:28px;margin:0 0 8px}
+    .hero p{margin:0;color:rgba(255,255,255,0.95)}
+    .btn{display:inline-block;background:#fff;color:var(--accent);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    main{padding:28px 18px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 4px 14px rgba(12,24,40,0.06)}
+    .service-title{font-weight:700;margin-bottom:8px}
+    .muted{color:var(--muted)}
+    .features{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+    .cta{background:linear-gradient(90deg,#fff 0%, #f2f7ff 100%);padding:18px;border-radius:12px;display:flex;gap:12px;align-items:center}
+    footer{padding:22px 18px;background:#fff;border-top:1px solid #e6eef9}
+    form input, form textarea{width:100%;padding:10px;border:1px solid #e6eef9;border-radius:8px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:12px}
+    @media(min-width:800px){
+      .hero{grid-template-columns:1fr 420px}
+      .grid-2{grid-template-columns:1fr 320px}
+    }
+    .phone{background:#0b74de;color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none}
+    .logo-placeholder{width:46px;height:46px;border-radius:10px;background:rgba(255,255,255,0.12);display:inline-block}
+    .small{font-size:13px}
+    .faq{margin-top:12px}
+    .faq details{margin-bottom:8px}
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .badge{display:inline-block;background:#eef6ff;color:#064e96;padding:6px 10px;border-radius:999px;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="logo-placeholder" aria-hidden></span>
+        <div class="brand">خدماتك</div>
+      </div>
+      <nav>
+        <a href="#services">الخدمات</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل</a>
+        <a class="phone" href="tel:+212600000000">+212 600 000 000</a>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="hero">
+        <div>
+          <h1>خدمات محترفة بسرعة وثقة</h1>
+          <p>نقدّم خدمات (تصليح - تركيب - صيانة) بجودة عالية وبأسعار شفافة. أرسل طلبك وسنعاود الاتصال خلال أقل من 24 ساعة.</p>
+          <div style="margin-top:12px">
+            <a class="btn" href="#contact">اطلب خدمة الآن</a>
+            <a style="margin-left:8px;color:#fff;text-decoration:underline" href="#services">عرض الخدمات</a>
+          </div>
+          <div style="margin-top:12px">
+            <span class="badge">ضمان 3 أشهر</span>
+            <span style="margin-inline-start:8px" class="small muted">خدمة محترفة — دعم مستقل — فواتير رسمية</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">اطلب عرض سعر سريع</h3>
+          <form id="quickForm">
+            <label class="small">الاسم</label>
+            <input type="text" name="name" required placeholder="اسمك" />
+            <label class="small">الهاتف</label>
+            <input type="tel" name="phone" required placeholder="رقم الهاتف" />
+            <label class="small">الخدمة المطلوبة</label>
+            <input type="text" name="service" placeholder="مثال: صيانة مكيف" />
+            <label class="small">ملاحظات (اختياري)</label>
+            <textarea name="notes" rows="3" placeholder="أضف تفاصيل..."></textarea>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button type="submit" class="btn">أرسل الطلب</button>
+              <a class="phone" href="tel:+212600000000">اتصل الآن</a>
+            </div>
+            <p id="formMsg" class="small muted" style="margin-top:8px;display:none">تم إرسال الطلب — سنتواصل معك قريبًا.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="services">
+      <h2>خدماتنا</h2>
+      <p class="muted">نقدّم مجموعة واسعة من الخدمات. اختر ما يناسبك أو اطلب استشارة مجانية.</p>
+      <div class="cards" style="margin-top:12px">
+        <div class="card">
+          <div class="service-title">صيانة عامة</div>
+          <div class="muted">فحص وتصليح الأعطال المنزلية بسرعة</div>
+          <div class="features">
+            <div>• زيارة منزلية</div>
+            <div>• قطع غيار أصلية</div>
+            <div>• فواتير وإيصالات</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="service-title">تركيب أجهزة</div>
+          <div class="muted">تركيب وتوصيل الأجهزة الكهربائية والأثاث</div>
+          <div class="features">
+            <div>• تركيب احترافي</div>
+            <div>• ضمان التركيب</div>
+            <div>• مواعيد مرنة</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="service-title">تنظيف احترافي</div>
+          <div class="muted">خدمات تنظيف للمنازل والمكاتب</div>
+          <div class="features">
+            <div>• فرق مدربة</div>
+            <div>• مواد آمنة</div>
+            <div>• جدول منتظم</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:22px">
+      <h2>من نحن</h2>
+      <div class="card grid-2" style="align-items:start">
+        <div>
+          <p class="muted">نحن فريق من الفنيين المتخصّصين نقدم خدمات سريعة وموثوقة منذ سنوات. نؤمن بالشفافية، الجودة، والالتزام بالمواعيد.</p>
+          <ul>
+            <li>فريق مُؤمّن ومدرّب</li>
+            <li>قطع غيار معتمدة</li>
+            <li>خدمة عملاء 7 أيام/الأسبوع</li>
+          </ul>
+        </div>
+        <div>
+          <h4>قيمنا</h4>
+          <p class="small muted">احتراف — صدق — سرعة — ضمان</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px">
+      <h2>آراء العملاء</h2>
+      <div class="testimonials">
+        <div class="card">
+          <strong>أحمد</strong>
+          <p class="muted small">"خدمة ممتازة ووصلوا في الوقت المحدد."</p>
+        </div>
+        <div class="card">
+          <strong>سارة</strong>
+          <p class="muted small">"التعامل مهني والأسعار عادلة."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:22px">
+      <h2>تواصل معنا</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>معلومات الاتصال</h4>
+          <p class="muted">هاتف: <a href="tel:+212600000000">+212 600 000 000</a></p>
+          <p class="muted">البريد الإلكتروني: <a href="mailto:info@example.com">info@example.com</a></p>
+          <p class="muted">المدينة: الدار البيضاء (مثال)</p>
+          <div class="faq">
+            <details>
+              <summary>ساعات العمل</summary>
+              <p class="muted small">من 9 صباحًا حتى 7 مساءً (السبت — الخميس)</p>
+            </details>
+            <details>
+              <summary>هل تقدمون فواتير؟</summary>
+              <p class="muted small">نعم، نصدر فواتير رسمية عند الطلب.</p>
+            </details>
+          </div>
+        </div>
+        <div class="card">
+          <h4>إرسال رسالة</h4>
+          <form id="contactForm">
+            <label class="small">اسمك</label>
+            <input name="name2" required placeholder="الاسم" />
+            <label class="small">البريد الإلكتروني</label>
+            <input name="email" type="email" required placeholder="example@mail.com" />
+            <label class="small">رسالتك</label>
+            <textarea name="message" rows="5" placeholder="ما الذي تحتاجه؟"></textarea>
+            <div style="margin-top:10px">
+              <button type="submit" class="btn">أرسل</button>
+            </div>
+            <p id="contactMsg" class="small muted" style="margin-top:8px;display:none">تم إرسال الرسالة. شكرًا لك!</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div class="small muted">© جميع الحقوق محفوظة — خدماتك 2025</div>
+      <div class="small">صمم بسرعة بواسطة موقع مجاني</div>
+    </div>
+  </footer>
+
+  <script>
+    // Form handlers (client-only) — replace with real backend or use mailto/GForms
+    document.getElementById('quickForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formMsg').style.display = 'block';
+      setTimeout(()=>{document.getElementById('formMsg').textContent = 'تم استلام الطلب. سنتواصل معك.'},300);
+      // In production: send to server or use email API
+    });
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('contactMsg').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
